@@ -15,9 +15,9 @@
     for (i = 0; i < response.data.topics.length; i++) {
       //selecting .topics
       let topics = document.querySelector('.topics')
-      console.log(response);
+      //setting a variable equal to the result of running tabsCreate on the topics array
       let topic_element = tabsCreate(response.data.topics[i]);
-
+      //appending completed element to topics
       topics.appendChild(topic_element);
     }
   });
@@ -27,8 +27,9 @@ let tabsCreate = (topics) => {
   let tab = document.createElement('div');
   //adding classes
   tab.classList.add('tab');
+  //applying innerHTML
   tab.innerHTML = topics;
-  console.log(tab);
+  //returning element
   return tab;
 
 };
